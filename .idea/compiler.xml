@@ -11,6 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Projekt emil" target="1.5" />
       <module name="springboot-backend" target="17" />
     </bytecodeTargetLevel>
   </component>
