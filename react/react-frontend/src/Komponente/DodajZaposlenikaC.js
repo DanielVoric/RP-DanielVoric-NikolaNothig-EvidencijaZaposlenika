@@ -1,16 +1,26 @@
 import React, { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
+import servisZaposlenika from '../servisi/servisZaposlenika'
 
 const DodajZaposlenikaC = () => {
     const [ime, setIme] = useState('')
     const [prezime, setPrezime] = useState('')
     const [emailid, setEmailid] = useState('')
+    const navigate = useNavigate();
 
     const spremiZaposlenika = (e) => {
         e.preventDefault();
 
         const zaposlenik = {ime, prezime, emailid}
 
-        console.log(zaposlenik)
+        servisZaposlenika.dodajZaposlenika(zaposlenik).then((response) =>{
+
+            console.log(response.data)
+
+            navigate('/zaposlenici')
+        }).catch(error => {
+            console.log(error)
+        })
     }
 
 
