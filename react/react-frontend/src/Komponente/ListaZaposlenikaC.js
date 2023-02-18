@@ -20,7 +20,7 @@ const ListaZaposlenikaC = () => {
     return (
         <div className="container">
             <h2 className="text-center"> Lista zaposlenika </h2>
-            <Link to = "/dodaj-zaposlenika" className = "btn btn-primary mb2"> Dodaj zaposlenika </Link>
+            <Link to = "/dodaj-zaposlenika" className = "btn btn-primary mb-2"> Dodaj zaposlenika </Link>
             <table className="table table-bordered table-striped">
                 <thead>
                     <th> Id zaposlenika </th>
