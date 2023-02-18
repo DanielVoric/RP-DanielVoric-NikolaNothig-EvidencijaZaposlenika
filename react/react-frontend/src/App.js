@@ -3,6 +3,7 @@ import { BrowserRouter, BrowserRouter as Router, Route, Routes, Switch } from 'r
 import ListaZaposlenikaC from './komponente/ListaZaposlenikaC';
 import PodnozjeC from './komponente/PodnozjeC';
 import ZaglavljeC from './komponente/ZaglavljeC';
+import DodajZaposlenikaC from './komponente/DodajZaposlenikaC';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<ListaZaposlenikaC />}></Route>
           <Route path="/zaposlenici" element={<ListaZaposlenikaC />}></Route>
           <Route path="*" element={<ListaZaposlenikaC />}></Route>
+          <Route path="/dodaj-zaposlenika" element={<DodajZaposlenikaC />}></Route>
         </Routes>
         <PodnozjeC />
       </BrowserRouter>
