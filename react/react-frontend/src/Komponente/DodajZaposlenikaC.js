@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import servisZaposlenika from '../servisi/servisZaposlenika'
 
 const DodajZaposlenikaC = () => {
@@ -72,6 +72,7 @@ const DodajZaposlenikaC = () => {
                                 </div>
 
                                 <button className = "btn btn-success mb-2" onClick = {(e) => spremiZaposlenika(e)} > Dodaj </button>
+                                <Link to = "/zaposlenici" className = "btn btn-danger mb-2 ms-2"> Odustani </Link>
 
                             </form>
                 </div>
