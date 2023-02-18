@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ServisZaposlenika from '../servisi/ServisZaposlenika'
+import servisZaposlenika from '../servisi/servisZaposlenika'
 
 const ListaZaposlenikaC = () => {
 
@@ -7,35 +7,34 @@ const ListaZaposlenikaC = () => {
 
     useEffect(() => {
 
-        ServisZaposlenika.dohvatiSveZaposlenike().then((response) => {
+        servisZaposlenika.dohvatiSveZaposlenike().then((response) => {
             setZaposlenici(response.data)
             console.log(response.data);
         }).catch(error => {
             console.log(error);
         })
-
     }, [])
 
 
     return (
         <div className="container">
-            <h2 className="text-center"> Lista Zaposlenika </h2>
+            <h2 className="text-center"> Lista zaposlenika </h2>
             <table className="table table-bordered table-striped">
                 <thead>
-                    <th> Id Zaposlenika</th>
-                    <th> Ime Zaposlenika</th>
-                    <th> Prezime Zaposlenika</th>
-                    <th> Email Zaposlenika</th>
+                    <th> Id zaposlenika </th>
+                    <th> Ime zaposlenika</th>
+                    <th> Prezime zaposlenika </th>
+                    <th> Email zaposlenika </th>
                 </thead>
                 <tbody>
                     {
                         zaposlenici.map(
                             zaposlenik =>
                                 <tr key={zaposlenik.id}>
-                                    <td>{zaposlenik.id}</td>
-                                    <td>{zaposlenik.ime}</td>
-                                    <td>{zaposlenik.prezime}</td>
-                                    <td>{zaposlenik.emailid}</td>
+                                    <td> {zaposlenik.id}</td>
+                                    <td> {zaposlenik.ime}</td>
+                                    <td> {zaposlenik.prezime}</td>
+                                    <td> {zaposlenik.emailid}</td>
                                 </tr>
                         )
                     }

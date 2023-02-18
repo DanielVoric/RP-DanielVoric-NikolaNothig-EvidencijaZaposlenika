@@ -1,9 +1,9 @@
 import './App.css';
-import ListaZaposlenikaC from './Komponente/ListaZaposlenikaC';
+import ListaZaposlenikaC from './komponente/ListaZaposlenikaC';
 
 function App() {
   return (
-    <div>
+    <div >
       <ListaZaposlenikaC />
     </div>
   );
