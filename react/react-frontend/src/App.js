@@ -1,6 +1,6 @@
 import './App.css';
 import ListaZaposlenikaC from './komponente/ListaZaposlenikaC';
-import PodnožjeC from './komponente/PodnožjeC';
+import PodnozjeC from './komponente/PodnozjeC';
 import ZaglavljeC from './komponente/ZaglavljeC';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div >
       <ZaglavljeC/>
       <ListaZaposlenikaC />
-      <PodnožjeC />
+      <PodnozjeC />
     </div>
   );
 }

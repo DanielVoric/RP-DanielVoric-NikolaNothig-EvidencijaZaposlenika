@@ -7,7 +7,7 @@ const ZaglavljeC = () => {
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                     <div>
                         <a href="" className="navbar-brand">
-                            gAplikacija za evidenciju zaposlenika
+                            Aplikacija za evidenciju zaposlenika
                         </a>
                     </div>
                 </nav>
