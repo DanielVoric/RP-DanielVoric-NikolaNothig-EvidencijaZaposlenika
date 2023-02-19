@@ -7,15 +7,25 @@ const ListaZaposlenikaC = () => {
     const [zaposlenici, setZaposlenici] = useState([])
 
     useEffect(() => {
+        dohvatiSveZaposlenike();
+    }, [])
 
+    const dohvatiSveZaposlenike = () =>{
         ServisZaposlenika.dohvatiSveZaposlenike().then((response) => {
             setZaposlenici(response.data)
             console.log(response.data);
         }).catch(error => {
             console.log(error);
-        })
-    }, [])
+        }) 
+    }
 
+    const izrisiZaposlenika = (zaposlenikId) => {
+        ServisZaposlenika.izrisiZaposlenika(zaposlenikId).then((response) => {
+            dohvatiSveZaposlenike();
+        }).catch(error => {
+            console.log(error)
+        })
+    }
 
     return (
         <div className="container">
@@ -41,6 +51,7 @@ const ListaZaposlenikaC = () => {
                                     <td> {zaposlenik.emailid}</td>
                                     <td>
                                     <Link className="btn btn-info" to={`/uredi-zaposlenika/${zaposlenik.id}`} >Ažuriraj</Link>
+                                    <button className = 'btn btn-danger ms-2' onClick={() => izrisiZaposlenika(zaposlenik.id)}> Izbrisi</button>
                                     </td>
                                 </tr>
                         )
