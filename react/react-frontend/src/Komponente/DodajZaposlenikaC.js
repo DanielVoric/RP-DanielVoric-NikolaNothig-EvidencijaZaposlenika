@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import servisZaposlenika from '../servisi/servisZaposlenika'
+import ServisZaposlenika from '../servisi/ServisZaposlenika'
 
 const DodajZaposlenikaC = () => {
     const [ime, setIme] = useState('')
@@ -17,14 +17,14 @@ const DodajZaposlenikaC = () => {
 
         if (id) {
 
-            servisZaposlenika.azurirajZaposlenika(id, zaposlenik).then((response) => {
+            ServisZaposlenika.azurirajZaposlenika(id, zaposlenik).then((response) => {
                 navigate('/zaposlenici')
             }).catch(error => {
                 console.log(error);
             })
 
         } else {
-            servisZaposlenika.dodajZaposlenika(zaposlenik).then((response) => {
+            ServisZaposlenika.dodajZaposlenika(zaposlenik).then((response) => {
 
                 console.log(response.data)
 
@@ -39,7 +39,7 @@ const DodajZaposlenikaC = () => {
 
     useEffect(() => {
 
-        servisZaposlenika.dohvatiZaposlenikaPoId(id).then((response) => {
+        ServisZaposlenika.dohvatiZaposlenikaPoId(id).then((response) => {
             setIme(response.data.ime)
             setPrezime(response.data.prezime)
             setEmailid(response.data.emailid)

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import servisZaposlenika from '../servisi/servisZaposlenika'
+import ServisZaposlenika from '../servisi/ServisZaposlenika'
 
 const ListaZaposlenikaC = () => {
 
@@ -8,7 +8,7 @@ const ListaZaposlenikaC = () => {
 
     useEffect(() => {
 
-        servisZaposlenika.dohvatiSveZaposlenike().then((response) => {
+        ServisZaposlenika.dohvatiSveZaposlenike().then((response) => {
             setZaposlenici(response.data)
             console.log(response.data);
         }).catch(error => {
