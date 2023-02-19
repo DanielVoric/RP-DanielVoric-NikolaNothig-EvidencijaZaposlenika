@@ -1,7 +1,9 @@
 package project.voricnothig.springboot.controller;
 
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.voricnothig.springboot.exception.NijePronadenoException;
@@ -49,5 +51,18 @@ public class MenaderZaposlenika {
 
         teglicaZaposlenika.save(azurirajZaposlenika);
         return ResponseEntity.ok(azurirajZaposlenika);
-}}
+}
+
+    //izbrisiZaposlenika rest api
+    @DeleteMapping("{id}")
+    public ResponseEntity<HttpStatus> izbrisiZaposlenika(@PathVariable long id){
+
+        Zaposlenik zaposlenik = teglicaZaposlenika.findById(id)
+                .orElseThrow(() -> new NijePronadenoException("Zaposlenik s tim id-om ne postoji" + id));
+
+        teglicaZaposlenika.delete(zaposlenik);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+}
 
