@@ -36,5 +36,18 @@ public class MenaderZaposlenika {
                 .orElseThrow(() -> new NijePronadenoException("Zaposlenik ne postoji sa tim id-om" + id));
         return ResponseEntity.ok(zaposlenik);
 
-    }    }
+    }
+    //azuzirajZaposlenika rest api
+    @PutMapping("{id}")
+    public ResponseEntity<Zaposlenik> azurirajZaposlenika(@PathVariable long id,@RequestBody Zaposlenik podaciZaposlenika){
+        Zaposlenik azurirajZaposlenika = teglicaZaposlenika.findById(id)
+                .orElseThrow(() -> new NijePronadenoException("Zaposlenik ne postoji s tim id-om"+id));
+        azurirajZaposlenika.setIme(podaciZaposlenika.getIme());
+        azurirajZaposlenika.setPrezime(podaciZaposlenika.getPrezime());
+        azurirajZaposlenika.setEmailid(podaciZaposlenika.getEmailid());
+
+
+        teglicaZaposlenika.save(azurirajZaposlenika);
+        return ResponseEntity.ok(azurirajZaposlenika);
+}}
 
