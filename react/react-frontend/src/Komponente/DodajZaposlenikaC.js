@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import servisZaposlenika from '../servisi/servisZaposlenika'
 
 const DodajZaposlenikaC = () => {
@@ -7,28 +7,39 @@ const DodajZaposlenikaC = () => {
     const [prezime, setPrezime] = useState('')
     const [emailid, setEmailid] = useState('')
     const navigate = useNavigate();
-    const {id} = useParams();
+    const { id } = useParams();
 
 
-    const spremiZaposlenika = (e) => {
+    const spremiIliUrediZaposlenika = (e) => {
         e.preventDefault();
 
-        const zaposlenik = {ime, prezime, emailid}
+        const zaposlenik = { ime, prezime, emailid }
 
-        servisZaposlenika.dodajZaposlenika(zaposlenik).then((response) =>{
+        if (id) {
 
-            console.log(response.data)
+            servisZaposlenika.azurirajZaposlenika(id, zaposlenik).then((response) => {
+                navigate('/zaposlenici')
+            }).catch(error => {
+                console.log(error);
+            })
 
-            navigate('/zaposlenici')
-        }).catch(error => {
-            console.log(error)
-        })
+        } else {
+            servisZaposlenika.dodajZaposlenika(zaposlenik).then((response) => {
+
+                console.log(response.data)
+
+                navigate('/zaposlenici')
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+
+
     }
 
     useEffect(() => {
-      
-        servisZaposlenika.dohvatiZaposlenikaPoId(id).then((response)=>
-        {
+
+        servisZaposlenika.dohvatiZaposlenikaPoId(id).then((response) => {
             setIme(response.data.ime)
             setPrezime(response.data.prezime)
             setEmailid(response.data.emailid)
@@ -37,75 +48,75 @@ const DodajZaposlenikaC = () => {
         })
 
     }, [])
-    
+
 
     const naslov = () => {
-        if(id){
+        if (id) {
             return <h2 className='text-center'> Ažuriraj Zaposlenika</h2>
-        }else{
+        } else {
             return <h2 className='text-center'> Dodaj Zaposlenika</h2>
 
         }
     }
 
-  return (
-    <div>
-        <br />
-        <div className = "container">
-            <div className = "row">
-                <div className = "card col-md-6 offset-md-3 offset-md-3">
-                    {
-                        naslov()
-                    }
-                    <form>
-                                <div className = "form-group mb-2">
-                                    <label className = "form-label"> Ime :</label>
-                                    <input
-                                        type = "text"
-                                        placeholder = "Unesi ime zaposlenika"
-                                        name = "Ime"
-                                        className = "form-control"
-                                        value = {ime}
-                                        onChange = {(e) => setIme(e.target.value)}
-                                    >
-                                    </input>
-                                </div>
+    return (
+        <div>
+            <br />
+            <div className="container">
+                <div className="row">
+                    <div className="card col-md-6 offset-md-3 offset-md-3">
+                        {
+                            naslov()
+                        }
+                        <form>
+                            <div className="form-group mb-2">
+                                <label className="form-label"> Ime :</label>
+                                <input
+                                    type="text"
+                                    placeholder="Unesi ime zaposlenika"
+                                    name="Ime"
+                                    className="form-control"
+                                    value={ime}
+                                    onChange={(e) => setIme(e.target.value)}
+                                >
+                                </input>
+                            </div>
 
-                                <div className = "form-group mb-2">
-                                    <label className = "form-label"> Prezime :</label>
-                                    <input
-                                        type = "text"
-                                        placeholder = "Unesi prezime zaposlenika"
-                                        name = "Prezime"
-                                        className = "form-control"
-                                        value = {prezime}
-                                        onChange = {(e) => setPrezime(e.target.value)}
-                                    >
-                                    </input>
-                                </div>
+                            <div className="form-group mb-2">
+                                <label className="form-label"> Prezime :</label>
+                                <input
+                                    type="text"
+                                    placeholder="Unesi prezime zaposlenika"
+                                    name="Prezime"
+                                    className="form-control"
+                                    value={prezime}
+                                    onChange={(e) => setPrezime(e.target.value)}
+                                >
+                                </input>
+                            </div>
 
-                                <div className = "form-group mb-2">
-                                    <label className = "form-label"> Email :</label>
-                                    <input
-                                        type = "email"
-                                        placeholder = "Unesi email zaposlenika"
-                                        name = "email"
-                                        className = "form-control"
-                                        value = {emailid}
-                                        onChange = {(e) => setEmailid(e.target.value)}
-                                    >
-                                    </input>
-                                </div>
+                            <div className="form-group mb-2">
+                                <label className="form-label"> Email :</label>
+                                <input
+                                    type="email"
+                                    placeholder="Unesi email zaposlenika"
+                                    name="email"
+                                    className="form-control"
+                                    value={emailid}
+                                    onChange={(e) => setEmailid(e.target.value)}
+                                >
+                                </input>
+                            </div>
 
-                                <button className = "btn btn-success mb-2" onClick = {(e) => spremiZaposlenika(e)} > Podnesi </button>
-                                <Link to = "/zaposlenici" className = "btn btn-danger mb-2 ms-2"> Odustani </Link>
+                            <button className="btn btn-success mb-2" onClick={(e) => spremiIliUrediZaposlenika(e)} > Podnesi </button>
+                            <Link to="/zaposlenici" className="btn btn-danger mb-2 ms-2"> Odustani </Link>
 
-                            </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default DodajZaposlenikaC
