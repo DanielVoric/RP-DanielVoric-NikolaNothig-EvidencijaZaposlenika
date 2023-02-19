@@ -27,6 +27,8 @@ const ListaZaposlenikaC = () => {
                     <th> Ime zaposlenika</th>
                     <th> Prezime zaposlenika </th>
                     <th> Email zaposlenika </th>
+                    <th> Akcije </th>
+
                 </thead>
                 <tbody>
                     {
@@ -37,6 +39,9 @@ const ListaZaposlenikaC = () => {
                                     <td> {zaposlenik.ime}</td>
                                     <td> {zaposlenik.prezime}</td>
                                     <td> {zaposlenik.emailid}</td>
+                                    <td>
+                                    <Link className="btn btn-info" to={`/uredi-zaposlenika/${zaposlenik.id}`} >Ažuriraj</Link>
+                                    </td>
                                 </tr>
                         )
                     }

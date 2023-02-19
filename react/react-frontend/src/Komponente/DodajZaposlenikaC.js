@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import {Link, useNavigate} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import {Link, useNavigate, useParams } from 'react-router-dom'
 import servisZaposlenika from '../servisi/servisZaposlenika'
 
 const DodajZaposlenikaC = () => {
@@ -7,6 +7,8 @@ const DodajZaposlenikaC = () => {
     const [prezime, setPrezime] = useState('')
     const [emailid, setEmailid] = useState('')
     const navigate = useNavigate();
+    const {id} = useParams();
+
 
     const spremiZaposlenika = (e) => {
         e.preventDefault();
@@ -23,6 +25,28 @@ const DodajZaposlenikaC = () => {
         })
     }
 
+    useEffect(() => {
+      
+        servisZaposlenika.dohvatiZaposlenikaPoId(id).then((response)=>
+        {
+            setIme(response.data.ime)
+            setPrezime(response.data.prezime)
+            setEmailid(response.data.emailid)
+        }).catch(error => {
+            console.log(error)
+        })
+
+    }, [])
+    
+
+    const naslov = () => {
+        if(id){
+            return <h2 className='text-center'> Ažuriraj Zaposlenika</h2>
+        }else{
+            return <h2 className='text-center'> Dodaj Zaposlenika</h2>
+
+        }
+    }
 
   return (
     <div>
@@ -30,7 +54,9 @@ const DodajZaposlenikaC = () => {
         <div className = "container">
             <div className = "row">
                 <div className = "card col-md-6 offset-md-3 offset-md-3">
-                    <h2 className = "text-center">Dodaj zaposlenika</h2>
+                    {
+                        naslov()
+                    }
                     <form>
                                 <div className = "form-group mb-2">
                                     <label className = "form-label"> Ime :</label>

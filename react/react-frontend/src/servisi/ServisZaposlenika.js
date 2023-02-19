@@ -11,6 +11,9 @@ class servisZaposlenika {
     dodajZaposlenika(zaposlenik){
         return axios.post(ZAPOSLENIK_REST_API_URL, zaposlenik)
     }
+    dohvatiZaposlenikaPoId(zaposlenikId){
+        return axios.get(ZAPOSLENIK_REST_API_URL + '/'+ zaposlenikId)
+    }
 }
 
 export default new servisZaposlenika();

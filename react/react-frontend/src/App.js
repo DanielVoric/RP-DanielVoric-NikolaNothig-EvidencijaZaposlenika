@@ -16,6 +16,7 @@ function App() {
           <Route path="/zaposlenici" element={<ListaZaposlenikaC />}></Route>
           <Route path="*" element={<ListaZaposlenikaC />}></Route>
           <Route path="/dodaj-zaposlenika" element={<DodajZaposlenikaC />}></Route>
+          <Route path="/uredi-zaposlenika/:id" element={<DodajZaposlenikaC />}></Route>
         </Routes>
         <PodnozjeC />
       </BrowserRouter>
