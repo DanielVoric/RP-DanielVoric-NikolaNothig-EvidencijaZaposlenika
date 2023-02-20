@@ -34,4 +34,10 @@ public class Zaposlenik {
     @Column(name = "OIB")
     private String oib;
 
+    @Column(name = "pozicija")
+    private String pozicija;
+
+    @Column(name = "status")
+    private String status;
+
 }

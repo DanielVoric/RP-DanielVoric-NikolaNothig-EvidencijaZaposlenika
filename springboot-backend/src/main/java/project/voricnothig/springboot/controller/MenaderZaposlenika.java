@@ -49,6 +49,9 @@ public class MenaderZaposlenika {
         azurirajZaposlenika.setEmailid(podaciZaposlenika.getEmailid());
         azurirajZaposlenika.setPlaca(podaciZaposlenika.getPlaca());
         azurirajZaposlenika.setOib(podaciZaposlenika.getOib());
+        azurirajZaposlenika.setStatus(podaciZaposlenika.getStatus());
+        azurirajZaposlenika.setPozicija(podaciZaposlenika.getPozicija());
+
 
 
 

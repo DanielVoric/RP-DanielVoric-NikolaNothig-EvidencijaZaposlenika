@@ -34,11 +34,13 @@ const ListaZaposlenikaC = () => {
             <table className="table table-bordered table-striped">
                 <thead>
                     <th> Id zaposlenika </th>
-                    <th> Ime zaposlenika</th>
-                    <th> Prezime zaposlenika </th>
-                    <th> OIB zaposlenika </th>
-                    <th> Email zaposlenika </th>
-                    <th> Placa zaposlenika </th>
+                    <th> Ime </th>
+                    <th> Prezime </th>
+                    <th> OIB </th>
+                    <th> Email </th>
+                    <th> Pozicija </th>
+                    <th> Placa </th>
+                    <th> Status </th>
                     <th> Akcije </th>
 
                 </thead>
@@ -52,7 +54,10 @@ const ListaZaposlenikaC = () => {
                                     <td> {zaposlenik.prezime}</td>
                                     <td> {zaposlenik.oib}</td>
                                     <td> {zaposlenik.emailid}</td>
+                                    <td> {zaposlenik.pozicija}</td>
                                     <td> {zaposlenik.placa}</td>
+                                    <td> {zaposlenik.status}</td>
+
 
                                     <td>
                                     <Link className="btn btn-info" to={`/uredi-zaposlenika/${zaposlenik.id}`} >Ažuriraj</Link>

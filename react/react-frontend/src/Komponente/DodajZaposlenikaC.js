@@ -7,7 +7,10 @@ const DodajZaposlenikaC = () => {
     const [prezime, setPrezime] = useState('')
     const [oib, setOib] = useState('')
     const [emailid, setEmailid] = useState('')
+    const [pozicija, setPozicija] = useState('')
     const [placa, setPlaca] = useState('')
+    const [status, setStatus] = useState('')
+
 
     const navigate = useNavigate();
     const { id } = useParams();
@@ -16,7 +19,7 @@ const DodajZaposlenikaC = () => {
     const spremiIliUrediZaposlenika = (e) => {
         e.preventDefault();
 
-        const zaposlenik = { ime, prezime, oib, emailid, placa }
+        const zaposlenik = { ime, prezime, oib, emailid, pozicija, placa, status }
 
         if (id) {
 
@@ -47,7 +50,9 @@ const DodajZaposlenikaC = () => {
             setPrezime(response.data.prezime)
             setPrezime(response.data.oib)
             setEmailid(response.data.emailid)
+            setPozicija(response.data.pozicija)
             setPlaca(response.data.placa)
+            setStatus(response.data.status)
 
         }).catch(error => {
             console.log(error)
@@ -104,7 +109,7 @@ const DodajZaposlenikaC = () => {
                             <div className="form-group mb-2">
                                 <label className="form-label"> OIB :</label>
                                 <input
-                                    type="text"
+                                    type="number"
                                     placeholder="Unesi OIB zaposlenika"
                                     name="oib"
                                     className="form-control"
@@ -128,6 +133,19 @@ const DodajZaposlenikaC = () => {
                             </div>
 
                             <div className="form-group mb-2">
+                                <label className="form-label"> Pozicija :</label>
+                                <input
+                                    type="text"
+                                    placeholder="Unesi placu zaposlenika"
+                                    name="pozicija"
+                                    className="form-control"
+                                    value={pozicija}
+                                    onChange={(e) => setPozicija(e.target.value)}
+                                >
+                                </input>
+                            </div>
+
+                            <div className="form-group mb-2">
                                 <label className="form-label"> Placa :</label>
                                 <input
                                     type="number"
@@ -140,6 +158,18 @@ const DodajZaposlenikaC = () => {
                                 </input>
                             </div>
 
+                            <div className="form-group mb-2">
+                                <label className="form-label"> Status :</label>
+                                <input
+                                    type="text"
+                                    placeholder="Unesi placu zaposlenika"
+                                    name="status"
+                                    className="form-control"
+                                    value={status}
+                                    onChange={(e) => setStatus(e.target.value)}
+                                >
+                                </input>
+                            </div>
                             <button className="btn btn-success mb-2" onClick={(e) => spremiIliUrediZaposlenika(e)} > Podnesi </button>
                             <Link to="/zaposlenici" className="btn btn-danger mb-2 ms-2"> Odustani </Link>
 
