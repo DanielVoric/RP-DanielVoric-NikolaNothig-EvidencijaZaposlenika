@@ -17,7 +17,7 @@ class ServisZaposlenika {
     azurirajZaposlenika(zaposlenikId, zaposlenik){
         return axios.put(ZAPOSLENIK_REST_API_URL + '/' + zaposlenikId, zaposlenik);
     }
-    izrisiZaposlenika(zaposlenikId){
+    izbrisiZaposlenika(zaposlenikId){
         return axios.delete(ZAPOSLENIK_REST_API_URL + '/' + zaposlenikId);
     }
 
