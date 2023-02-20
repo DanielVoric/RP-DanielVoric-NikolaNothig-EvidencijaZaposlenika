@@ -20,9 +20,7 @@ class ServisZaposlenika {
     izrisiZaposlenika(zaposlenikId){
         return axios.delete(ZAPOSLENIK_REST_API_URL + '/' + zaposlenikId);
     }
-    azurirajPlacu(zaposlenikId, zaposlenik){
-        return axios.put(ZAPOSLENIK_REST_API_URL + '/' + zaposlenikId, zaposlenik)
-    }
+
 }
 
 export default new ServisZaposlenika();

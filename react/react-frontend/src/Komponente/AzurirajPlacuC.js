@@ -14,11 +14,11 @@ const AzurirajPlacuC = () => {
     const navigate = useNavigate();
     const { id } = useParams();
 
-    const AzurirajPlacu = (e) => {
+    const azurirajZaposlenika = (e) => {
         e.preventDefault();
 
         const zaposlenik = { ime, prezime, oib, emailid, pozicija, placa, status }
-        ServisZaposlenika.azurirajPlacu(id, zaposlenik).then((response) => {
+        ServisZaposlenika.azurirajZaposlenika(id, zaposlenik).then((response) => {
             navigate('/zaposlenici')
         }).catch(error => {
             console.log(error);
@@ -69,7 +69,7 @@ const AzurirajPlacuC = () => {
                                 </input>
                             </div>
 
-                            <button className="btn btn-success mb-2" onClick={(e) => AzurirajPlacu(e)} > Podnesi </button>
+                            <button className="btn btn-success mb-2" onClick={(e) => azurirajZaposlenika(e)} > Podnesi </button>
                             <Link to="/zaposlenici" className="btn btn-danger mb-2 ms-2"> Odustani </Link>
 
                         </form>
