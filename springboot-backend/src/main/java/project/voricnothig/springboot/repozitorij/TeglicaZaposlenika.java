@@ -1,10 +1,10 @@
-package project.voricnothig.springboot.repository;
+package project.voricnothig.springboot.repozitorij;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import project.voricnothig.springboot.modul.Zaposlenik;
 
 
 public interface TeglicaZaposlenika extends JpaRepository<Zaposlenik, Long> {
-    //all crud database methods
+    //teglica postoji
 }
 

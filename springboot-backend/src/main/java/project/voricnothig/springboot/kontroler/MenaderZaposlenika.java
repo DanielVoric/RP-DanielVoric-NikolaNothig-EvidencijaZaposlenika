@@ -1,14 +1,13 @@
-package project.voricnothig.springboot.controller;
+package project.voricnothig.springboot.kontroler;
 
 
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.voricnothig.springboot.exception.NijePronadenoException;
 import project.voricnothig.springboot.modul.Zaposlenik;
-import project.voricnothig.springboot.repository.TeglicaZaposlenika;
+import project.voricnothig.springboot.repozitorij.TeglicaZaposlenika;
 
 import java.util.List;
 
@@ -51,10 +50,6 @@ public class MenaderZaposlenika {
         azurirajZaposlenika.setOib(podaciZaposlenika.getOib());
         azurirajZaposlenika.setStatus(podaciZaposlenika.getStatus());
         azurirajZaposlenika.setPozicija(podaciZaposlenika.getPozicija());
-
-
-
-
 
         teglicaZaposlenika.save(azurirajZaposlenika);
         return ResponseEntity.ok(azurirajZaposlenika);

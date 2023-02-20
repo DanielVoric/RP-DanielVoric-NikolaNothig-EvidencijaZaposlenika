@@ -30,9 +30,10 @@ const ListaZaposlenikaC = () => {
     return (
         <div className="container">
             <h2 className="text-center"> Lista zaposlenika </h2>
-            <Link to = "/dodaj-zaposlenika" className = "btn btn-primary mb-2"> Dodaj zaposlenika </Link>
-            <table className="table table-bordered table-striped">
-                <thead>
+            <Link to = "/dodaj-zaposlenika" className = "glow-on-hover btn mb-2 "> Dodaj zaposlenika </Link>
+            <table className="table table-dark table-bordered table-striped table-hover table-sm">
+                <thead class='thead-dark'>
+                    <tr>
                     <th> Id zaposlenika </th>
                     <th> Ime </th>
                     <th> Prezime </th>
@@ -42,7 +43,7 @@ const ListaZaposlenikaC = () => {
                     <th> Plaća </th>
                     <th> Status </th>
                     <th> Akcije </th>
-
+                    </tr>
                 </thead>
                 <tbody>
                     {
@@ -60,9 +61,9 @@ const ListaZaposlenikaC = () => {
 
 
                                     <td>
-                                    <Link className="btn btn-info" to={`/uredi-zaposlenika/${zaposlenik.id}`} >Ažuriraj</Link>
-                                    <Link className="btn btn-info ms-2" to={`/placa-zaposlenika/${zaposlenik.id}`} > Plaća </Link>
-                                    <button className = 'btn btn-danger ms-2' onClick={() => izbrisiZaposlenika(zaposlenik.id)}> Izbrisi</button>
+                                    <Link className="btn btn-outline-info" to={`/uredi-zaposlenika/${zaposlenik.id}`} >Ažuriraj</Link>
+                                    <Link className="btn btn-outline-warning ms-2" to={`/placa-zaposlenika/${zaposlenik.id}`} > Plaća </Link>
+                                    <button className = 'btn btn-outline-danger ms-2' onClick={() => izbrisiZaposlenika(zaposlenik.id)}> Izbrisi</button>
                                     </td>
                                 </tr>
                         )
