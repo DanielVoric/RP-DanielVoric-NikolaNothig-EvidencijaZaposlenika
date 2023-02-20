@@ -6,6 +6,8 @@ const DodajZaposlenikaC = () => {
     const [ime, setIme] = useState('')
     const [prezime, setPrezime] = useState('')
     const [emailid, setEmailid] = useState('')
+    const [placa, setPlaca] = useState('')
+
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -13,7 +15,7 @@ const DodajZaposlenikaC = () => {
     const spremiIliUrediZaposlenika = (e) => {
         e.preventDefault();
 
-        const zaposlenik = { ime, prezime, emailid }
+        const zaposlenik = { ime, prezime, emailid, placa }
 
         if (id) {
 
@@ -43,6 +45,8 @@ const DodajZaposlenikaC = () => {
             setIme(response.data.ime)
             setPrezime(response.data.prezime)
             setEmailid(response.data.emailid)
+            setPlaca(response.data.placa)
+
         }).catch(error => {
             console.log(error)
         })
@@ -104,6 +108,19 @@ const DodajZaposlenikaC = () => {
                                     className="form-control"
                                     value={emailid}
                                     onChange={(e) => setEmailid(e.target.value)}
+                                >
+                                </input>
+                            </div>
+
+                            <div className="form-group mb-2">
+                                <label className="form-label"> Placa :</label>
+                                <input
+                                    type="placa"
+                                    placeholder="Unesi placu zaposlenika"
+                                    name="placa"
+                                    className="form-control"
+                                    value={placa}
+                                    onChange={(e) => setPlaca(e.target.value)}
                                 >
                                 </input>
                             </div>

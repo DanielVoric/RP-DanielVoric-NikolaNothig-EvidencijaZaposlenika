@@ -37,6 +37,7 @@ const ListaZaposlenikaC = () => {
                     <th> Ime zaposlenika</th>
                     <th> Prezime zaposlenika </th>
                     <th> Email zaposlenika </th>
+                    <th> Placa zaposlenika </th>
                     <th> Akcije </th>
 
                 </thead>
@@ -49,6 +50,8 @@ const ListaZaposlenikaC = () => {
                                     <td> {zaposlenik.ime}</td>
                                     <td> {zaposlenik.prezime}</td>
                                     <td> {zaposlenik.emailid}</td>
+                                    <td> {zaposlenik.placa}</td>
+
                                     <td>
                                     <Link className="btn btn-info" to={`/uredi-zaposlenika/${zaposlenik.id}`} >Ažuriraj</Link>
                                     <button className = 'btn btn-danger ms-2' onClick={() => izrisiZaposlenika(zaposlenik.id)}> Izbrisi</button>
