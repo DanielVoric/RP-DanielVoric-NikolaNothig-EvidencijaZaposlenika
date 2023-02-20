@@ -19,8 +19,8 @@ const ListaZaposlenikaC = () => {
         }) 
     }
 
-    const izrisiZaposlenika = (zaposlenikId) => {
-        ServisZaposlenika.izrisiZaposlenika(zaposlenikId).then((response) => {
+    const izbrisiZaposlenika = (zaposlenikId) => {
+        ServisZaposlenika.izbrisiZaposlenika(zaposlenikId).then((response) => {
             dohvatiSveZaposlenike();
         }).catch(error => {
             console.log(error)
@@ -61,7 +61,8 @@ const ListaZaposlenikaC = () => {
 
                                     <td>
                                     <Link className="btn btn-info" to={`/uredi-zaposlenika/${zaposlenik.id}`} >Ažuriraj</Link>
-                                    <button className = 'btn btn-danger ms-2' onClick={() => izrisiZaposlenika(zaposlenik.id)}> Izbrisi</button>
+                                    <Link className="btn btn-info ms-2" to={`/placa-zaposlenika/${zaposlenik.id}`} > Placa </Link>
+                                    <button className = 'btn btn-danger ms-2' onClick={() => izbrisiZaposlenika(zaposlenik.id)}> Izbrisi</button>
                                     </td>
                                 </tr>
                         )

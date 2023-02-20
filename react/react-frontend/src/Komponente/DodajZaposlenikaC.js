@@ -31,9 +31,7 @@ const DodajZaposlenikaC = () => {
 
         } else {
             ServisZaposlenika.dodajZaposlenika(zaposlenik).then((response) => {
-
                 console.log(response.data)
-
                 navigate('/zaposlenici')
             }).catch(error => {
                 console.log(error)
@@ -48,7 +46,7 @@ const DodajZaposlenikaC = () => {
         ServisZaposlenika.dohvatiZaposlenikaPoId(id).then((response) => {
             setIme(response.data.ime)
             setPrezime(response.data.prezime)
-            setPrezime(response.data.oib)
+            setOib(response.data.oib)
             setEmailid(response.data.emailid)
             setPozicija(response.data.pozicija)
             setPlaca(response.data.placa)
@@ -61,12 +59,12 @@ const DodajZaposlenikaC = () => {
     }, [])
 
 
+
     const naslov = () => {
         if (id) {
             return <h2 className='text-center'> Ažuriraj Zaposlenika</h2>
         } else {
             return <h2 className='text-center'> Dodaj Zaposlenika</h2>
-
         }
     }
 
@@ -136,7 +134,7 @@ const DodajZaposlenikaC = () => {
                                 <label className="form-label"> Pozicija :</label>
                                 <input
                                     type="text"
-                                    placeholder="Unesi placu zaposlenika"
+                                    placeholder="Unesi poziciju zaposlenika"
                                     name="pozicija"
                                     className="form-control"
                                     value={pozicija}
@@ -162,7 +160,7 @@ const DodajZaposlenikaC = () => {
                                 <label className="form-label"> Status :</label>
                                 <input
                                     type="text"
-                                    placeholder="Unesi placu zaposlenika"
+                                    placeholder="Unesi status zaposlenika"
                                     name="status"
                                     className="form-control"
                                     value={status}
@@ -179,6 +177,7 @@ const DodajZaposlenikaC = () => {
             </div>
         </div>
     )
+
 }
 
 export default DodajZaposlenikaC

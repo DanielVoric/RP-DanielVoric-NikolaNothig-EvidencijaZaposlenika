@@ -4,6 +4,7 @@ import ListaZaposlenikaC from './komponente/ListaZaposlenikaC';
 import PodnozjeC from './komponente/PodnozjeC';
 import ZaglavljeC from './komponente/ZaglavljeC';
 import DodajZaposlenikaC from './komponente/DodajZaposlenikaC';
+import AzurirajPlacuC from './komponente/AzurirajPlacuC';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="*" element={<ListaZaposlenikaC />}></Route>
           <Route path="/dodaj-zaposlenika" element={<DodajZaposlenikaC />}></Route>
           <Route path="/uredi-zaposlenika/:id" element={<DodajZaposlenikaC />}></Route>
+          <Route path="/placa-zaposlenika/:id" element={<AzurirajPlacuC />}></Route>
         </Routes>
         <PodnozjeC />
       </BrowserRouter>
