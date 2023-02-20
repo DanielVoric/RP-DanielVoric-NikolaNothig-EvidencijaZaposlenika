@@ -36,6 +36,7 @@ const ListaZaposlenikaC = () => {
                     <th> Id zaposlenika </th>
                     <th> Ime zaposlenika</th>
                     <th> Prezime zaposlenika </th>
+                    <th> OIB zaposlenika </th>
                     <th> Email zaposlenika </th>
                     <th> Placa zaposlenika </th>
                     <th> Akcije </th>
@@ -49,6 +50,7 @@ const ListaZaposlenikaC = () => {
                                     <td> {zaposlenik.id}</td>
                                     <td> {zaposlenik.ime}</td>
                                     <td> {zaposlenik.prezime}</td>
+                                    <td> {zaposlenik.oib}</td>
                                     <td> {zaposlenik.emailid}</td>
                                     <td> {zaposlenik.placa}</td>
 

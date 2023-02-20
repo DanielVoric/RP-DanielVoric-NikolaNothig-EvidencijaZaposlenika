@@ -5,6 +5,7 @@ import ServisZaposlenika from '../servisi/ServisZaposlenika'
 const DodajZaposlenikaC = () => {
     const [ime, setIme] = useState('')
     const [prezime, setPrezime] = useState('')
+    const [oib, setOib] = useState('')
     const [emailid, setEmailid] = useState('')
     const [placa, setPlaca] = useState('')
 
@@ -15,7 +16,7 @@ const DodajZaposlenikaC = () => {
     const spremiIliUrediZaposlenika = (e) => {
         e.preventDefault();
 
-        const zaposlenik = { ime, prezime, emailid, placa }
+        const zaposlenik = { ime, prezime, oib, emailid, placa }
 
         if (id) {
 
@@ -44,6 +45,7 @@ const DodajZaposlenikaC = () => {
         ServisZaposlenika.dohvatiZaposlenikaPoId(id).then((response) => {
             setIme(response.data.ime)
             setPrezime(response.data.prezime)
+            setPrezime(response.data.oib)
             setEmailid(response.data.emailid)
             setPlaca(response.data.placa)
 
@@ -100,9 +102,22 @@ const DodajZaposlenikaC = () => {
                             </div>
 
                             <div className="form-group mb-2">
+                                <label className="form-label"> OIB :</label>
+                                <input
+                                    type="text"
+                                    placeholder="Unesi OIB zaposlenika"
+                                    name="oib"
+                                    className="form-control"
+                                    value={oib}
+                                    onChange={(e) => setOib(e.target.value)}
+                                >
+                                </input>
+                            </div>
+
+                            <div className="form-group mb-2">
                                 <label className="form-label"> Email :</label>
                                 <input
-                                    type="email"
+                                    type="text"
                                     placeholder="Unesi email zaposlenika"
                                     name="email"
                                     className="form-control"
@@ -115,7 +130,7 @@ const DodajZaposlenikaC = () => {
                             <div className="form-group mb-2">
                                 <label className="form-label"> Placa :</label>
                                 <input
-                                    type="placa"
+                                    type="number"
                                     placeholder="Unesi placu zaposlenika"
                                     name="placa"
                                     className="form-control"

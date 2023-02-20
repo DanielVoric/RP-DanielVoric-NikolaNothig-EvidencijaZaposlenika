@@ -31,4 +31,7 @@ public class Zaposlenik {
     @Column(name = "placa")
     private String placa;
 
+    @Column(name = "OIB")
+    private String oib;
+
 }
