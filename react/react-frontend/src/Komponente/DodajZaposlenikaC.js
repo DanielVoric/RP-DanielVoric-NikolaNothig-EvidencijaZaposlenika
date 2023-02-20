@@ -144,11 +144,11 @@ const DodajZaposlenikaC = () => {
                             </div>
 
                             <div className="form-group mb-2">
-                                <label className="form-label"> Placa :</label>
+                                <label className="form-label"> Plaća :</label>
                                 <input
                                     type="number"
-                                    placeholder="Unesi placu zaposlenika"
-                                    name="placa"
+                                    placeholder="Unesi plaću zaposlenika"
+                                    name="plaća"
                                     className="form-control"
                                     value={placa}
                                     onChange={(e) => setPlaca(e.target.value)}

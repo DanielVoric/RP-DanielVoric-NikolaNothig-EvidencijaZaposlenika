@@ -39,7 +39,7 @@ const ListaZaposlenikaC = () => {
                     <th> OIB </th>
                     <th> Email </th>
                     <th> Pozicija </th>
-                    <th> Placa </th>
+                    <th> Plaća </th>
                     <th> Status </th>
                     <th> Akcije </th>
 
@@ -61,7 +61,7 @@ const ListaZaposlenikaC = () => {
 
                                     <td>
                                     <Link className="btn btn-info" to={`/uredi-zaposlenika/${zaposlenik.id}`} >Ažuriraj</Link>
-                                    <Link className="btn btn-info ms-2" to={`/placa-zaposlenika/${zaposlenik.id}`} > Placa </Link>
+                                    <Link className="btn btn-info ms-2" to={`/placa-zaposlenika/${zaposlenik.id}`} > Plaća </Link>
                                     <button className = 'btn btn-danger ms-2' onClick={() => izbrisiZaposlenika(zaposlenik.id)}> Izbrisi</button>
                                     </td>
                                 </tr>
