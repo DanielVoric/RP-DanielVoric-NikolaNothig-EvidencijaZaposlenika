@@ -10,14 +10,16 @@ const AzurirajPlacuC = () => {
     const [pozicija, setPozicija] = useState('')
     const [placa, setPlaca] = useState('')
     const [status, setStatus] = useState('')
-    
+    const [postotak, setPostotak] = useState('')
+
     const navigate = useNavigate();
     const { id } = useParams();
 
     const azurirajZaposlenika = (e) => {
         e.preventDefault();
 
-        const zaposlenik = { ime, prezime, oib, emailid, pozicija, placa, status }
+        const newPlaca = placa * (1 + postotak / 100)
+        const zaposlenik = { ime, prezime, oib, emailid, pozicija, placa: newPlaca, status }
         ServisZaposlenika.azurirajZaposlenika(id, zaposlenik).then((response) => {
             navigate('/zaposlenici')
         }).catch(error => {
@@ -43,7 +45,7 @@ const AzurirajPlacuC = () => {
     }, [])
 
     const naslov = () => {
-            return <h2 className='text-center'> Ažuriraj plaću</h2>
+        return <h2 className='text-center'> Ažuriraj plaću</h2>
     }
 
     return (
@@ -52,26 +54,23 @@ const AzurirajPlacuC = () => {
             <div className="container">
                 <div className="row">
                     <div className="card col-md-6 offset-md-3 offset-md-3">
-                        {
-                            naslov()
-                        }
+                        {naslov()}
                         <form>
-                                <div className="form-group mb-2">
-                                <label className="form-label"> Plaća :</label>
+                            <div className="form-group mb-2">
+                                    <label className="form-label">Plaća:</label>
+                                    <div>{placa + " EUR"}</div>
+                            </div>
+                            <div className="form-group mb-2">
+                                <label className="form-label">Povećaj ili umanji za (%):</label>
                                 <input
                                     type="number"
-                                    placeholder="Unesi plaću zaposlenika"
-                                    name="plaća"
                                     className="form-control"
-                                    value={placa}
-                                    onChange={(e) => setPlaca(e.target.value)}
-                                >
-                                </input>
+                                    value={postotak}
+                                    onChange={(e) => setPostotak((e.target.value))}
+                                />
                             </div>
-
-                            <button className="btn btn-success mb-2" onClick={(e) => azurirajZaposlenika(e)} > Podnesi </button>
-                            <Link to="/zaposlenici" className="btn btn-danger mb-2 ms-2"> Odustani </Link>
-
+                            <button className="btn btn-success mb-2" onClick={azurirajZaposlenika}>Podnesi</button>
+                            <Link to="/zaposlenici" className="btn btn-danger mb-2 ms-2">Odustani</Link>
                         </form>
                     </div>
                 </div>
@@ -79,6 +78,5 @@ const AzurirajPlacuC = () => {
         </div>
     )
 }
-
 
 export default AzurirajPlacuC
