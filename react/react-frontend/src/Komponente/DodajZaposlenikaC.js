@@ -176,8 +176,8 @@ const DodajZaposlenikaC = () => {
                                     >
                                     </input>
                                 </div>
-                                <button className="btn btn-success mb-2" onClick={(e) => spremiIliUrediZaposlenika(e)} > Podnesi </button>
-                                <Link to="/zaposlenici" className="btn btn-danger mb-2 ms-2"> Odustani </Link>
+                                <button className="btn btn-outline-success mb-2" onClick={(e) => spremiIliUrediZaposlenika(e)} > Podnesi </button>
+                                <Link to="/zaposlenici" className="btn btn-outline-danger mb-2 ms-2"> Odustani </Link>
 
                             </form>
                         </div>

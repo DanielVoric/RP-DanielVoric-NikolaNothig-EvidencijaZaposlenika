@@ -34,7 +34,7 @@ const ListaZaposlenikaC = () => {
             backgroundSize: 'cover', 
             backgroundPosition: 'center', 
             backgroundRepeat: 'no-repeat',
-            height: '100vh'}}>
+            height: '90vh'}}>
         <div className="container">
             <h2 className="text-center"> Lista zaposlenika </h2>
             <Link to = "/dodaj-zaposlenika" className = "btn glow-on-hover btn-dark mb-2 "> Dodaj zaposlenika </Link>

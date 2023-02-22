@@ -76,8 +76,8 @@ const AzurirajPlacuC = () => {
                                     onChange={(e) => setPostotak((e.target.value))}
                                 />
                             </div>
-                            <button className="btn btn-success mb-2" onClick={azurirajZaposlenika}>Podnesi</button>
-                            <Link to="/zaposlenici" className="btn btn-danger mb-2 ms-2">Odustani</Link>
+                            <button className="btn btn-outline-success mb-2" onClick={azurirajZaposlenika}>Podnesi</button>
+                            <Link to="/zaposlenici" className="btn btn-outline-danger mb-2 ms-2">Odustani</Link>
                         </form>
                     </div>
                 </div>
