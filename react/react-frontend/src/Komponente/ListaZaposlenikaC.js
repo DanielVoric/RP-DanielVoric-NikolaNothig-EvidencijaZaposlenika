@@ -30,7 +30,7 @@ const ListaZaposlenikaC = () => {
     return (
         <div className="container">
             <h2 className="text-center"> Lista zaposlenika </h2>
-            <Link to = "/dodaj-zaposlenika" className = "glow-on-hover btn mb-2 "> Dodaj zaposlenika </Link>
+            <Link to = "/dodaj-zaposlenika" className = "btn glow-on-hover btn-dark mb-2 "> Dodaj zaposlenika </Link>
             <table className="table table-dark table-bordered table-striped table-hover table-sm">
                 <thead class='thead-dark'>
                     <tr>

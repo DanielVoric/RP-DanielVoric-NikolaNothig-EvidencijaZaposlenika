@@ -39,6 +39,7 @@
   opacity: 0;
   transition: opacity .3s ease-in-out;
   border-radius: 10px;
+  
 }
 
 .glow-on-hover:active {
