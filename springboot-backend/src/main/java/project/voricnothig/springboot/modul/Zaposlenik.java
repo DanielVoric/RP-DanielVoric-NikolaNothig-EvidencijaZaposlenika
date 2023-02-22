@@ -29,10 +29,10 @@ public class Zaposlenik {
     private String emailid;
 
     @Column(name = "placa")
-    private String placa;
+    private Integer placa;
 
     @Column(name = "OIB")
-    private String oib;
+    private Integer oib;
 
     @Column(name = "pozicija")
     private String pozicija;
