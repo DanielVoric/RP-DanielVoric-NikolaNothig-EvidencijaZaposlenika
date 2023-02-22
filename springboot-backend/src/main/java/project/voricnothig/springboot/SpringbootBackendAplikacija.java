@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import project.voricnothig.springboot.repozitorij.TeglicaZaposlenika;
 
 @SpringBootApplication
-public class SpringbootBackendApplication implements CommandLineRunner {
+public class SpringbootBackendAplikacija implements CommandLineRunner {
 
 // cd C:\Program Files\MySQL\MySQL Server 8.0\bin - DANE
 // cd C:\Program Files\MySQL\MySQL Server 8.0\bin - NOLE
@@ -16,7 +16,7 @@ public class SpringbootBackendApplication implements CommandLineRunner {
 // Za pokretanje servera u konzoli
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootBackendApplication.class, args);
+        SpringApplication.run(SpringbootBackendAplikacija.class, args);
     }
 
     @Autowired
