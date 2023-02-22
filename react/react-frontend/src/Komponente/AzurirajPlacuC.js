@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import ServisZaposlenika from '../servisi/ServisZaposlenika'
+import pozadina from '../komponente/slike/pozadina.jpg'
 
 const AzurirajPlacuC = () => {
     const [ime, setIme] = useState('')
@@ -49,6 +50,12 @@ const AzurirajPlacuC = () => {
     }
 
     return (
+        <body style={{ 
+            backgroundImage: `url(${pozadina})`, 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center', 
+            backgroundRepeat: 'no-repeat',
+            height: '100vh'}}>
         <div>
             <br />
             <div className="container">
@@ -76,6 +83,7 @@ const AzurirajPlacuC = () => {
                 </div>
             </div>
         </div>
+        </body>
     )
 }
 
