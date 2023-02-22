@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import ServisZaposlenika from '../servisi/ServisZaposlenika'
+import pozadina from '../komponente/slike/pozadina.jpg';
 
 const DodajZaposlenikaC = () => {
     const [ime, setIme] = useState('')
@@ -69,113 +70,121 @@ const DodajZaposlenikaC = () => {
     }
 
     return (
-        <div>
-            <br />
-            <div className="container">
-                <div className="row">
-                    <div className="card col-md-6 offset-md-3 offset-md-3">
-                        {
-                            naslov()
-                        }
-                        <form>
-                            <div className="form-group mb-2">
-                                <label className="form-label"> Ime :</label>
-                                <input
-                                    type="text"
-                                    placeholder="Unesi ime zaposlenika"
-                                    name="Ime"
-                                    className="form-control"
-                                    value={ime}
-                                    onChange={(e) => setIme(e.target.value)}
-                                >
-                                </input>
-                            </div>
+        <body style={{
+            backgroundImage: `url(${pozadina})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            height: '100vh'
+        }}>
+            <div>
+                <br />
+                <div className="container">
+                    <div className="row">
+                        <div className="card col-md-6 offset-md-3 offset-md-3">
+                            {
+                                naslov()
+                            }
+                            <form>
+                                <div className="form-group mb-2">
+                                    <label className="form-label"> Ime :</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Unesi ime zaposlenika"
+                                        name="Ime"
+                                        className="form-control"
+                                        value={ime}
+                                        onChange={(e) => setIme(e.target.value)}
+                                    >
+                                    </input>
+                                </div>
 
-                            <div className="form-group mb-2">
-                                <label className="form-label"> Prezime :</label>
-                                <input
-                                    type="text"
-                                    placeholder="Unesi prezime zaposlenika"
-                                    name="Prezime"
-                                    className="form-control"
-                                    value={prezime}
-                                    onChange={(e) => setPrezime(e.target.value)}
-                                >
-                                </input>
-                            </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label"> Prezime :</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Unesi prezime zaposlenika"
+                                        name="Prezime"
+                                        className="form-control"
+                                        value={prezime}
+                                        onChange={(e) => setPrezime(e.target.value)}
+                                    >
+                                    </input>
+                                </div>
 
-                            <div className="form-group mb-2">
-                                <label className="form-label"> OIB :</label>
-                                <input
-                                    type="number"
-                                    placeholder="Unesi OIB zaposlenika"
-                                    name="oib"
-                                    className="form-control"
-                                    value={oib}
-                                    onChange={(e) => setOib(e.target.value)}
-                                >
-                                </input>
-                            </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label"> OIB :</label>
+                                    <input
+                                        type="number"
+                                        placeholder="Unesi OIB zaposlenika"
+                                        name="oib"
+                                        className="form-control"
+                                        value={oib}
+                                        onChange={(e) => setOib(e.target.value)}
+                                    >
+                                    </input>
+                                </div>
 
-                            <div className="form-group mb-2">
-                                <label className="form-label"> Email :</label>
-                                <input
-                                    type="text"
-                                    placeholder="Unesi email zaposlenika"
-                                    name="email"
-                                    className="form-control"
-                                    value={emailid}
-                                    onChange={(e) => setEmailid(e.target.value)}
-                                >
-                                </input>
-                            </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label"> Email :</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Unesi email zaposlenika"
+                                        name="email"
+                                        className="form-control"
+                                        value={emailid}
+                                        onChange={(e) => setEmailid(e.target.value)}
+                                    >
+                                    </input>
+                                </div>
 
-                            <div className="form-group mb-2">
-                                <label className="form-label"> Pozicija :</label>
-                                <input
-                                    type="text"
-                                    placeholder="Unesi poziciju zaposlenika"
-                                    name="pozicija"
-                                    className="form-control"
-                                    value={pozicija}
-                                    onChange={(e) => setPozicija(e.target.value)}
-                                >
-                                </input>
-                            </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label"> Pozicija :</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Unesi poziciju zaposlenika"
+                                        name="pozicija"
+                                        className="form-control"
+                                        value={pozicija}
+                                        onChange={(e) => setPozicija(e.target.value)}
+                                    >
+                                    </input>
+                                </div>
 
-                            <div className="form-group mb-2">
-                                <label className="form-label"> Plaća :</label>
-                                <input
-                                    type="number"
-                                    placeholder="Unesi plaću zaposlenika"
-                                    name="plaća"
-                                    className="form-control"
-                                    value={placa}
-                                    onChange={(e) => setPlaca(e.target.value)}
-                                >
-                                </input>
-                            </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label"> Plaća :</label>
+                                    <input
+                                        type="number"
+                                        placeholder="Unesi plaću zaposlenika"
+                                        name="plaća"
+                                        className="form-control"
+                                        value={placa}
+                                        onChange={(e) => setPlaca(e.target.value)}
+                                    >
+                                    </input>
+                                </div>
 
-                            <div className="form-group mb-2">
-                                <label className="form-label"> Status :</label>
-                                <input
-                                    type="text"
-                                    placeholder="Unesi status zaposlenika"
-                                    name="status"
-                                    className="form-control"
-                                    value={status}
-                                    onChange={(e) => setStatus(e.target.value)}
-                                >
-                                </input>
-                            </div>
-                            <button className="btn btn-success mb-2" onClick={(e) => spremiIliUrediZaposlenika(e)} > Podnesi </button>
-                            <Link to="/zaposlenici" className="btn btn-danger mb-2 ms-2"> Odustani </Link>
+                                <div className="form-group mb-2">
+                                    <label className="form-label"> Status :</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Unesi status zaposlenika"
+                                        name="status"
+                                        className="form-control"
+                                        value={status}
+                                        onChange={(e) => setStatus(e.target.value)}
+                                    >
+                                    </input>
+                                </div>
+                                <button className="btn btn-success mb-2" onClick={(e) => spremiIliUrediZaposlenika(e)} > Podnesi </button>
+                                <Link to="/zaposlenici" className="btn btn-danger mb-2 ms-2"> Odustani </Link>
 
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </body>
     )
 
 }

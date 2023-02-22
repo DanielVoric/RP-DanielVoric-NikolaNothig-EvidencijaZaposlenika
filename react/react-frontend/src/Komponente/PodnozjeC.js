@@ -2,7 +2,7 @@ import React from 'react'
 
 const PodnozjeC = () => {
   return (
-    <div>
+    <div className="fixed-bottom">
       <footer className="footer">
         <span className="text-muted">
           Izradili Daniel Vorić i Nikola Nöthig

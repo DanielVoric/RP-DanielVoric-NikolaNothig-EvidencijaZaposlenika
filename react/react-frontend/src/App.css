@@ -72,3 +72,11 @@
   100% { background-position: 0 0; }
 }
 
+.footer {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.footer:hover {
+  opacity: 0;
+}
