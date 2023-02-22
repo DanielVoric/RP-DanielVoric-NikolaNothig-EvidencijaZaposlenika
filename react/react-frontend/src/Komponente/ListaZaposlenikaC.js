@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ServisZaposlenika from '../servisi/ServisZaposlenika'
+import pozadina from '../komponente/slike/pozadina.jpg';
 
 const ListaZaposlenikaC = () => {
 
@@ -28,6 +29,12 @@ const ListaZaposlenikaC = () => {
     }
 
     return (
+        <body style={{ 
+            backgroundImage: `url(${pozadina})`, 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center', 
+            backgroundRepeat: 'no-repeat',
+            height: '100vh'}}>
         <div className="container">
             <h2 className="text-center"> Lista zaposlenika </h2>
             <Link to = "/dodaj-zaposlenika" className = "btn glow-on-hover btn-dark mb-2 "> Dodaj zaposlenika </Link>
@@ -71,6 +78,7 @@ const ListaZaposlenikaC = () => {
                 </tbody>
             </table>
         </div>
+        </body>
     )
 }
 
